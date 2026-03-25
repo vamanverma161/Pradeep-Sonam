@@ -1,0 +1,1 @@
+# TODO Progress: Cute Replay Button\n\nPrevious:\n- [x] Music auto-play loop (Raanjhanaa song)\n\nCurrent:\n- [ ] 1. Update TODO\n- [ ] 2. Add replay button to MusicPlayer.tsx\n- [ ] 3. Test restart function\n- [ ] 4. Complete
