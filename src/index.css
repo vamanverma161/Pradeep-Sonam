@@ -178,4 +178,15 @@
   .animate-tick {
     animation: tick 1s ease-in-out infinite;
   }
+
+  .phone-glow {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .phone-glow:hover {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.3);
+    color: hsl(43, 72%, 65%) !important;
+  }
 }

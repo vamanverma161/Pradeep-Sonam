@@ -2,9 +2,10 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Music, VolumeX, Volume2, Heart } from "lucide-react";
 
-const MusicPlayer = ({ autoPlayTrigger }: { autoPlayTrigger?: number }) => {
+const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -21,28 +22,11 @@ const MusicPlayer = ({ autoPlayTrigger }: { autoPlayTrigger?: number }) => {
     audioRef.current = audio;
 
     audio.load(); // Preload
-    // Instant autoplay with muted start (browser friendly)
-    audio.muted = true;
-    audio.play().then(() => {
-      audio.muted = false; // Unmute after play starts
-      setIsPlaying(true);
-    }).catch((e) => {
-      console.log('Play requires interaction:', e);
-    });
 
     return () => {
       audio.pause();
     };
   }, []);
-
-  // Auto-play when trigger changes
-  useEffect(() => {
-    if (autoPlayTrigger !== undefined && audioRef.current) {
-      audioRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch(() => {});
-    }
-  }, [autoPlayTrigger]);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -56,8 +40,20 @@ const MusicPlayer = ({ autoPlayTrigger }: { autoPlayTrigger?: number }) => {
 
   const toggleMute = () => {
     if (!audioRef.current) return;
-    audioRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
+    
+    // First interaction - start playing with sound
+    if (!hasInteracted) {
+      audioRef.current.muted = false;
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(() => {});
+      setHasInteracted(true);
+      setIsMuted(false);
+    } else {
+      // Toggle mute
+      audioRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
   };
 
   const replaySong = () => {
@@ -75,12 +71,13 @@ const MusicPlayer = ({ autoPlayTrigger }: { autoPlayTrigger?: number }) => {
       className="fixed bottom-6 right-6 z-40 flex flex-col gap-2"
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 3.5, duration: 0.5 }}
+      transition={{ delay: 1, duration: 0.5 }}
     >
       <button
         onClick={toggleMute}
         className="w-12 h-12 rounded-full glass flex items-center justify-center text-gold-dark hover:scale-110 transition-transform"
         aria-label={isMuted ? "Unmute" : "Mute"}
+        title={hasInteracted ? (isMuted ? "Click to unmute" : "Click to mute") : "Click to play music 🎵"}
       >
         {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
       </button>
@@ -88,6 +85,7 @@ const MusicPlayer = ({ autoPlayTrigger }: { autoPlayTrigger?: number }) => {
         onClick={togglePlay}
         className={`w-12 h-12 rounded-full glass flex items-center justify-center text-gold-dark hover:scale-110 transition-transform ${isPlaying ? "animate-pulse-glow" : ""}`}
         aria-label={isPlaying ? "Pause music" : "Play music"}
+        title={isPlaying ? "Pause music" : "Play music"}
       >
         <Music className="w-5 h-5" />
       </button>

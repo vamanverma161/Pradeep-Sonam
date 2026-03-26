@@ -18,12 +18,9 @@ const Footer = lazy(() => import("@/components/wedding/Footer"));
 
 const Index = () => {
   const [showContent, setShowContent] = useState(false);
-  const [autoPlayTrigger, setAutoPlayTrigger] = useState(0);
 
   const handleWelcomeComplete = () => {
     setShowContent(true);
-    // Trigger auto-play after welcome screen is dismissed
-    setAutoPlayTrigger((prev) => prev + 1);
   };
 
   return (
@@ -54,10 +51,10 @@ const Index = () => {
             <FloralDivider />
             <Footer />
           </Suspense>
-          <MusicPlayer autoPlayTrigger={autoPlayTrigger} />
           <ScrollToTop />
         </>
       )}
+      <MusicPlayer />
     </div>
   );
 };
