@@ -1,1 +1,9 @@
-# TODO Progress: Cute Replay Button\n\nPrevious:\n- [x] Music auto-play loop (Raanjhanaa song)\n\nCurrent:\n- [ ] 1. Update TODO\n- [ ] 2. Add replay button to MusicPlayer.tsx\n- [ ] 3. Test restart function\n- [ ] 4. Complete
+# Task Progress: Update Welcome Screen & Run Project
+
+## Steps:
+- [x] Create TODO.md
+- [x] Update src/components/wedding/WelcomeScreen.tsx with dynamic couple initials
+- [x] Install dependencies if needed (bun install)
+- [x] Run development server (bun dev)
+- [x] Verify welcome screen shows "P & S" for Pradeep & Sonam
+- [ ] Complete task

@@ -1,42 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-const events = [
-  {
-    title: "Tilak Ceremony",
-    date: "21 April 2026",
-    day: "Tuesday",
-    emoji: "🎊",
-    description: "The sacred tilak ceremony marking the formal acceptance of the groom.",
-    color: "from-rose/30 to-peach/30",
-  },
-  {
-    title: "Mehendi & Sangeet",
-    date: "25 April 2026",
-    day: "Saturday",
-    emoji: "💃",
-    description: "An evening of beautiful mehendi designs, music, and dance celebrations.",
-    color: "from-sage/30 to-cream/30",
-  },
-  {
-    title: "Haldi Ceremony",
-    date: "26 April 2026",
-    day: "Sunday",
-    emoji: "✨",
-    description: "The auspicious haldi ceremony to bless the couple before the wedding.",
-    color: "from-gold/20 to-ivory/30",
-  },
-  {
-    title: "Wedding — Baraat & Phere",
-    date: "27 April 2026",
-    day: "Monday",
-    emoji: "💍",
-    description: "The grand wedding day — baraat procession followed by the sacred phere ceremony.",
-    color: "from-peach/30 to-rose/30",
-  },
-];
+import { useWeddingData } from "@/hooks/useWeddingData";
 
 const EventsTimeline = () => {
+  const data = useWeddingData();
+  const events = data.events || [];
+  const sections = data.sections?.events || { title: "Wedding Events" };
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -49,7 +19,7 @@ const EventsTimeline = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-heading text-3xl md:text-5xl text-foreground mb-4">Wedding Events</h2>
+          <h2 className="font-heading text-3xl md:text-5xl text-foreground mb-4">{sections.title}</h2>
           <div className="w-24 h-px bg-gold/50 mx-auto" />
         </motion.div>
 
@@ -58,7 +28,7 @@ const EventsTimeline = () => {
           {/* Vertical line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gold/30 md:-translate-x-px" />
 
-          {events.map((event, index) => (
+          {events.map((event: any, index: number) => (
             <motion.div
               key={event.title}
               className={`relative flex items-start mb-12 last:mb-0 ${
@@ -73,7 +43,7 @@ const EventsTimeline = () => {
 
               {/* Card */}
               <div className={`ml-12 md:ml-0 md:w-[45%] ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
-                <div className={`glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 bg-gradient-to-br ${event.color}`}>
+                <div className={`glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 bg-gradient-to-br ${event.color || "from-peach/30 to-rose/30"}`}>
                   <div className="text-3xl mb-3">{event.emoji}</div>
                   <h3 className="font-heading text-xl text-foreground mb-1">{event.title}</h3>
                   <p className="font-body text-sm font-semibold text-gold-dark mb-2">
@@ -91,3 +61,4 @@ const EventsTimeline = () => {
 };
 
 export default EventsTimeline;
+

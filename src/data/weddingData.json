@@ -1,0 +1,149 @@
+{
+  "couple": {
+    "groom": "Pradeep",
+    "bride": "Sonam"
+  },
+  "weddingDate": "25 April 2026",
+  "hero": {
+    "tagline": "Together with love, we invite you to celebrate our wedding"
+  },
+  "sections": {
+    "events": {
+      "title": "Wedding Events"
+    },
+    "blessings": {
+      "title": "Blessings & Wishes"
+    },
+    "venue": {
+      "title": "Wedding Venue"
+    },
+    "countdown": {
+      "title": "Counting Down To Forever"
+    },
+    "gallery": {
+      "title": "Our Gallery"
+    }
+  },
+  "events": [
+    {
+      "title": "Sangeet, Mehndi Ceremony",
+      "date": "24 April 2026",
+      "day": "Friday",
+      "emoji": "🎊",
+      "description": "The sacred ceremony marking the formal acceptance of the groom.",
+      "color": "from-rose/30 to-peach/30"
+    },
+    {
+      "title": "Mangal Snan, Baraat Prasthan, Vivah Sanskar",
+      "date": "25 April 2026",
+      "day": "Saturday",
+      "emoji": "💃",
+      "description": "The grand wedding day with baraat procession and sacred vivah sanskar.",
+      "color": "from-sage/30 to-cream/30"
+    },
+    {
+      "title": "Var Vadhu Gruh Pravesh",
+      "date": "26 April 2026",
+      "day": "Sunday",
+      "emoji": "✨",
+      "description": "The auspicious grah pravesh to bless the couple.",
+      "color": "from-gold/20 to-ivory/30"
+    }
+  ],
+  "blessings": [
+    {
+      "name": "Family",
+      "message": "May your love grow stronger with each passing day. You are a blessing to all of us. Wishing you a lifetime of happiness together. 🙏"
+    },
+    {
+      "name": "Parents",
+      "message": "Our hearts are full of joy seeing you begin this beautiful journey. May God bless you both with eternal love and prosperity. 🌸"
+    },
+    {
+      "name": "Friends",
+      "message": "Two amazing souls coming together! May your marriage be filled with laughter, adventures, and endless love. 💕"
+    },
+    {
+      "name": "Elders",
+      "message": "Sadaa suhagan raho, khush raho. May your home be filled with love, peace, and the sweet sound of laughter. 🪷"
+    }
+  ],
+  "venue": {
+    "description": "Wedding Location (Lat: 24.761067, Long: 84.369292). We look forward to welcoming you!",
+    "mapEmbedSrc": "https://www.google.com/maps?q=24.761067,84.369292&hl=en&z=17&output=embed",
+    "mapLink": "https://www.google.com/maps?q=24.761067,84.369292",
+    "buttonText": "Open in Google Maps"
+  },
+  "invitation": {
+    "hindi": "Dil se nivedan hai ki aap apni upasthiti se is shubh avsar ko aur bhi khaas banayein.",
+    "english": "With love, we invite you to celebrate this beautiful union."
+  },
+  "gallery": [
+    {
+      "src": "/gallery-1.png",
+      "alt": "Pre-wedding shoot",
+      "category": "Pre-wedding"
+    },
+    {
+      "src": "/gallery-2.png",
+      "alt": "Haldi ceremony",
+      "category": "Haldi"
+    },
+    {
+      "src": "/gallery-3.png",
+      "alt": "Couple portrait",
+      "category": "Couple"
+    },
+    {
+      "src": "/gallery-4.png",
+      "alt": "Family moments",
+      "category": "Family"
+    },
+    {
+      "src": "/gallery-5.png",
+      "alt": "Wedding decorations",
+      "category": "Mehendi"
+    },
+    {
+      "src": "/gallery-6.png",
+      "alt": "Couple dancing",
+      "category": "Couple"
+    }
+  ],
+  "quotes": [
+    {
+      "text": "A successful marriage requires falling in love many times, always with the same person.",
+      "author": "Mignon McLaughlin"
+    },
+    {
+      "text": "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.",
+      "author": "Maya Angelou"
+    },
+    {
+      "text": "Love is not about how many days, months, or years you've been together. It's about how much you love each other every day.",
+      "author": "Unknown"
+    },
+    {
+      "text": "The best thing to hold onto in life is each other.",
+      "author": "Audrey Hepburn"
+    }
+  ],
+  "countdown": {
+    "date": "2026-04-25T00:00:00"
+  },
+  "footer": {
+    "address": "Nikat Manoj Provision Store, Main Road Ghandhi Nagar, Muzaffarnagar, UP",
+    "contacts": [
+      {
+        "phone": "7060025373"
+      },
+      {
+        "phone": "9411193416"
+      },
+      {
+        "phone": "9720963945"
+      }
+    ],
+    "madeWith": "Made with ❤️ for Pradeep & Sonam"
+  }
+}

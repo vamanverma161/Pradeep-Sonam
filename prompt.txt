@@ -1,0 +1,32 @@
+Create a beautiful, modern wedding invitation website for a couple's special day. Use React + Vite + TypeScript + Tailwind CSS + shadcn/ui components. Make it immersive and romantic with the following details:
+
+**Wedding Details:**
+- Couple: [Insert Couple Names, e.g., Aarav & Priya]
+- Event: Wedding Ceremony & Reception
+- Date: [Insert Date, e.g., December 15, 2024]
+- Time: Ceremony 6:00 PM, Reception 8:00 PM
+- Venue: [Insert Venue, e.g., Grand Heritage Hall, Mumbai]
+- Location/RSVP: Include Google Maps embed, RSVP form via email/form
+
+**Design & Features:**
+- Hero section with romantic couple photo (use placeholder public/couple-hero.png), elegant typography, countdown timer.
+- Welcome screen with invitation message, soft animations (Framer Motion).
+- 3D scene or particle effects (React Three Fiber/Three.js).
+- Music player with autoplay loop (Raanjhanaa song or romantic track, public/song.mp3).
+- Gallery carousel with 6+ photos (public/gallery-*.png).
+- Events timeline: Pre-wedding, ceremony, reception.
+- Blessings/mantra/quote slider section.
+- Location section with map.
+- Invitation video embed (public/Invitation.mp4).
+- Floral dividers, gradients (pink/gold/purple), responsive mobile-first.
+- Scroll-to-top, dark/light theme optional.
+- Footer with couple info, love quote.
+
+**Technical:**
+- Vite dev server port 8080.
+- Routing: Home/Index.tsx with wedding components.
+- Components: shadcn/ui (card, carousel, dialog, toast, etc.), custom wedding/*.
+- Optimize for performance, SEO (title, meta, robots.txt).
+- Include replay button for music/video.
+
+Generate complete codebase ready to run with `bun run dev`. Use public assets provided. Make it emotional and shareable!

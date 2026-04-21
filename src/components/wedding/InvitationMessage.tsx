@@ -32,7 +32,7 @@ const InvitationMessage = () => {
             With love, we invite you to celebrate this beautiful union.
           </p>
           <div className="mt-8 font-script text-3xl text-gold-dark">
-            Ankita & Anmol
+            Pradeep & Sonam
           </div>
         </motion.div>
       </div>

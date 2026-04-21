@@ -1,4 +1,5 @@
 import { useState, lazy, Suspense } from "react";
+import { WeddingDataProvider } from "@/hooks/useWeddingData";
 import WelcomeScreen from "@/components/wedding/WelcomeScreen";
 import HeroSection from "@/components/wedding/HeroSection";
 import InvitationVideo from "@/components/wedding/InvitationVideo";
@@ -24,39 +25,42 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      {!showContent && <WelcomeScreen onComplete={handleWelcomeComplete} />}
+    <WeddingDataProvider>
+      <div className="min-h-screen overflow-x-hidden">
+        {!showContent && <WelcomeScreen onComplete={handleWelcomeComplete} />}
 
-      {showContent && (
-        <>
-          <HeroSection />
-          <InvitationVideo />
-          <FloralDivider />
-          <Suspense fallback={<div className="h-32" />}>
-            <MantraSection />
+        {showContent && (
+          <>
+            <HeroSection />
+            <InvitationVideo />
             <FloralDivider />
-            <EventsTimeline />
-            <FloralDivider />
-            <CountdownTimer />
-            <FloralDivider />
-            <InvitationMessage />
-            <FloralDivider />
-            <QuoteSlider />
-            <FloralDivider />
-            <BlessingsSection />
-            <FloralDivider />
-            <LocationSection />
-            <FloralDivider />
-            <Gallery />
-            <FloralDivider />
-            <Footer />
-          </Suspense>
-          <ScrollToTop />
-        </>
-      )}
-      <MusicPlayer />
-    </div>
+            <Suspense fallback={<div className="h-32" />}>
+              <MantraSection />
+              <FloralDivider />
+              <EventsTimeline />
+              <FloralDivider />
+              <CountdownTimer />
+              <FloralDivider />
+              <InvitationMessage />
+              <FloralDivider />
+              <QuoteSlider />
+              <FloralDivider />
+              <BlessingsSection />
+              <FloralDivider />
+              <LocationSection />
+              <FloralDivider />
+              <Gallery />
+              <FloralDivider />
+              <Footer />
+            </Suspense>
+            <ScrollToTop />
+          </>
+        )}
+        <MusicPlayer />
+      </div>
+    </WeddingDataProvider>
   );
 };
 
 export default Index;
+
