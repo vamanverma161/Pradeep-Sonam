@@ -1,14 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-const blessings = [
-  { name: "Family", message: "May your love grow stronger with each passing day. You are a blessing to all of us. Wishing you a lifetime of happiness together. 🙏" },
-  { name: "Parents", message: "Our hearts are full of joy seeing you begin this beautiful journey. May God bless you both with eternal love and prosperity. 🌸" },
-  { name: "Friends", message: "Two amazing souls coming together! May your marriage be filled with laughter, adventures, and endless love. 💕" },
-  { name: "Elders", message: "Sadaa suhagan raho, khush raho. May your home be filled with love, peace, and the sweet sound of laughter. 🪷" },
-];
+import { useWeddingData } from "@/hooks/useWeddingData";
 
 const BlessingsSection = () => {
+  const weddingData = useWeddingData();
+  const blessings = weddingData.blessings;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -46,3 +42,4 @@ const BlessingsSection = () => {
 };
 
 export default BlessingsSection;
+
